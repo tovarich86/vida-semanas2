@@ -46,6 +46,7 @@ button {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  margin-bottom: 15px; /* Espaçamento adicional */
 }
 
 button:hover {
@@ -62,6 +63,7 @@ button:hover {
   gap: 2px;
   justify-content: center;
   position: relative;
+  margin: 20px 0; /* Espaçamento adicional */
 }
 
 .square {
@@ -81,7 +83,7 @@ button:hover {
 }
 
 .y-axis {
-  left: -35px;
+  left: -45px; /* Ajuste de alinhamento */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -90,7 +92,7 @@ button:hover {
 }
 
 .x-axis {
-  top: -25px;
+  top: -40px; /* Ajuste de sobreposição */
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -99,6 +101,13 @@ button:hover {
 
 .x-axis span, .y-axis span {
   padding: 2px;
+}
+
+.chart-legend {
+  font-size: 0.9rem;
+  color: #cccccc;
+  margin-top: 10px;
+  text-align: center;
 }
 
 /* Responsividade */
