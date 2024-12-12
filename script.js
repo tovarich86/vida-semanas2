@@ -80,3 +80,8 @@ function renderChart(totalUnits, maxUnits, unitLabel) {
     chart.appendChild(square);
   }
 }
+
+// Função para impressão
+document.getElementById('print-button').addEventListener('click', function () {
+  window.print();
+});

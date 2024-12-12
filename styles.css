@@ -46,7 +46,7 @@ button {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  margin-bottom: 15px; /* Espaçamento adicional */
+  margin-bottom: 15px;
 }
 
 button:hover {
@@ -63,7 +63,7 @@ button:hover {
   gap: 2px;
   justify-content: center;
   position: relative;
-  margin: 20px 0; /* Espaçamento adicional */
+  margin: 20px 0;
 }
 
 .square {
@@ -83,7 +83,7 @@ button:hover {
 }
 
 .y-axis {
-  left: -45px; /* Ajuste de alinhamento */
+  left: -45px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -92,7 +92,7 @@ button:hover {
 }
 
 .x-axis {
-  top: -40px; /* Ajuste de sobreposição */
+  top: -40px;
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -110,29 +110,58 @@ button:hover {
   text-align: center;
 }
 
-/* Responsividade */
-@media (max-width: 600px) {
-  .container {
-    padding: 15px;
-    margin: 10px;
+.credits {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  text-align: center;
+  color: #cccccc;
+}
+
+.credits a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.credits a:hover {
+  text-decoration: underline;
+}
+
+#print-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  margin-top: 10px;
+  background-color: #007BFF;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#print-button:hover {
+  background-color: #0056b3;
+}
+
+/* Tema claro para impressão */
+@media print {
+  body {
+    background-color: #ffffff;
+    color: #000000;
   }
 
-  h1 {
-    font-size: 1.5rem;
+  .container {
+    background-color: #ffffff;
+    box-shadow: none;
   }
 
   .square {
-    width: 6px;
-    height: 6px;
+    background-color: #cccccc;
   }
 
-  .y-axis {
-    left: -25px;
-    font-size: 10px;
+  .square.filled {
+    background-color: #000000;
   }
 
-  .x-axis {
-    top: -20px;
-    font-size: 10px;
+  .credits, #print-button {
+    display: none;
   }
 }
