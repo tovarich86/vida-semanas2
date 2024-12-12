@@ -3,18 +3,28 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Sua Vida</title>
+  <title>Sua Vida em Perspectiva</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="container">
     <h1>Sua Vida em Perspectiva</h1>
-    <ul>
-      <li><a href="anos.html">Anos</a></li>
-      <li><a href="meses.html">Meses</a></li>
-      <li><a href="semanas.html">Semanas</a></li>
-    </ul>
+    <form id="dob-form">
+      <label for="dob">Data de Nascimento:</label>
+      <input type="date" id="dob" required />
+      <label for="unitbox">Visualizar em:</label>
+      <select id="unitbox">
+        <option value="weeks">Semanas</option>
+        <option value="months">Meses</option>
+        <option value="years">Anos</option>
+      </select>
+      <button type="submit">Atualizar</button>
+    </form>
+    <div class="chart-container">
+      <div id="chart"></div>
+    </div>
   </div>
+  <script src="script.js"></script>
 </body>
 </html>

@@ -20,7 +20,7 @@ h1 {
 form {
   margin: 20px 0;
 }
-input {
+input, select {
   padding: 10px;
   font-size: 1rem;
   margin: 10px 0;
@@ -39,8 +39,20 @@ button {
 button:hover {
   background-color: #0056b3;
 }
-#result {
+.chart-container {
   margin-top: 20px;
-  font-size: 1.2rem;
-  color: #555;
+}
+#chart {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10px, 1fr));
+  gap: 2px;
+  justify-content: center;
+}
+.square {
+  width: 10px;
+  height: 10px;
+  background-color: #e0e0e0;
+}
+.square.filled {
+  background-color: #007BFF;
 }
