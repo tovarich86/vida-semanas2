@@ -41,12 +41,13 @@ button:hover {
 }
 .chart-container {
   margin-top: 20px;
+  position: relative;
 }
 #chart {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(10px, 1fr));
   gap: 2px;
   justify-content: center;
+  position: relative;
 }
 .square {
   width: 10px;
@@ -55,4 +56,28 @@ button:hover {
 }
 .square.filled {
   background-color: #007BFF;
+}
+.y-axis, .x-axis {
+  position: absolute;
+  font-size: 10px;
+  color: #333;
+}
+.y-axis {
+  left: -30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.y-axis span {
+  text-align: right;
+}
+.x-axis {
+  top: -20px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.x-axis span {
+  text-align: center;
 }
