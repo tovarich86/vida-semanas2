@@ -1,0 +1,109 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Sua Vida</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Sua Vida em Perspectiva</h1>
+    <ul>
+      <li><a href="anos.html">Anos</a></li>
+      <li><a href="meses.html">Meses</a></li>
+      <li><a href="semanas.html">Semanas</a></li>
+    </ul>
+  </div>
+</body>
+</html>
+
+<!-- semanas.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Sua Vida em Semanas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Sua Vida em Semanas</h1>
+    <form id="dob-form">
+      <label for="dob">Data de Nascimento:</label>
+      <input type="date" id="dob" required />
+      <button type="submit">Calcular</button>
+    </form>
+    <div id="result"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+
+<!-- styles.css -->
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+.container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1 {
+  font-size: 1.5rem;
+  color: #333;
+}
+form {
+  margin: 20px 0;
+}
+input {
+  padding: 10px;
+  font-size: 1rem;
+  margin: 10px 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #0056b3;
+}
+#result {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+<!-- script.js -->
+document.getElementById('dob-form').addEventListener('submit', function (event) {
+  event.preventDefault();
+
+  const dobInput = document.getElementById('dob').value;
+  const dob = new Date(dobInput);
+  const today = new Date();
+
+  if (dob > today) {
+    alert('A data de nascimento não pode ser no futuro.');
+    return;
+  }
+
+  const diffInMilliseconds = today - dob;
+  const weeksLived = Math.floor(diffInMilliseconds / (1000 * 60 * 60 * 24 * 7));
+
+  document.getElementById('result').textContent = `Você viveu aproximadamente ${weeksLived} semanas.`;
+});
