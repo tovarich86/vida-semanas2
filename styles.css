@@ -1,83 +1,129 @@
 
+/* Tema Escuro */
 body {
   font-family: Arial, sans-serif;
-  margin: 20px;
-  background-color: #f9f9f9;
+  margin: 0;
+  background-color: #121212;
+  color: #ffffff;
   text-align: center;
 }
+
 .container {
   max-width: 600px;
-  margin: auto;
+  margin: 20px auto;
   padding: 20px;
-  background: white;
+  background: #1f1f1f;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
 }
+
 h1 {
-  font-size: 1.5rem;
-  color: #333;
+  font-size: 1.8rem;
+  color: #ffffff;
 }
+
 form {
   margin: 20px 0;
 }
+
 input, select {
   padding: 10px;
   font-size: 1rem;
   margin: 10px 0;
   width: 100%;
   box-sizing: border-box;
+  border: 1px solid #444;
+  border-radius: 4px;
+  background-color: #2b2b2b;
+  color: #ffffff;
 }
+
 button {
   padding: 10px 20px;
   font-size: 1rem;
   background-color: #007BFF;
-  color: white;
+  color: #ffffff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
+
 button:hover {
   background-color: #0056b3;
 }
+
 .chart-container {
   margin-top: 20px;
   position: relative;
 }
+
 #chart {
   display: grid;
   gap: 2px;
   justify-content: center;
   position: relative;
 }
+
 .square {
-  width: 10px;
-  height: 10px;
-  background-color: #e0e0e0;
+  width: 8px;
+  height: 8px;
+  background-color: #333333;
 }
+
 .square.filled {
   background-color: #007BFF;
 }
+
 .y-axis, .x-axis {
-  position: absolute;
-  font-size: 10px;
-  color: #333;
+  font-size: 12px;
+  font-weight: bold;
+  color: #cccccc;
 }
+
 .y-axis {
-  left: -30px;
+  left: -35px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  position: absolute;
 }
-.y-axis span {
-  text-align: right;
-}
+
 .x-axis {
-  top: -20px;
+  top: -25px;
   display: flex;
   justify-content: space-between;
   width: 100%;
+  position: absolute;
 }
-.x-axis span {
-  text-align: center;
+
+.x-axis span, .y-axis span {
+  padding: 2px;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;
+    margin: 10px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .square {
+    width: 6px;
+    height: 6px;
+  }
+
+  .y-axis {
+    left: -25px;
+    font-size: 10px;
+  }
+
+  .x-axis {
+    top: -20px;
+    font-size: 10px;
+  }
 }
