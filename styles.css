@@ -126,42 +126,39 @@ button:hover {
   text-decoration: underline;
 }
 
-#print-button {
-  padding: 10px 20px;
-  font-size: 1rem;
-  margin-top: 10px;
-  background-color: #007BFF;
-  color: #ffffff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-#print-button:hover {
-  background-color: #0056b3;
-}
-
-/* Tema claro para impressão */
-@media print {
-  body {
-    background-color: #ffffff;
-    color: #000000;
+/* Melhorias para versão mobile */
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;
+    margin: 10px;
   }
 
-  .container {
-    background-color: #ffffff;
-    box-shadow: none;
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  form label {
+    display: block;
+    text-align: left;
+    margin: 10px 0 5px;
+  }
+
+  input, select {
+    width: calc(100% - 20px);
   }
 
   .square {
-    background-color: #cccccc;
+    width: 6px;
+    height: 6px;
   }
 
-  .square.filled {
-    background-color: #000000;
+  .y-axis {
+    left: -25px;
+    font-size: 10px;
   }
 
-  .credits, #print-button {
-    display: none;
+  .x-axis {
+    top: -20px;
+    font-size: 10px;
   }
 }
